@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
-      with: drawerWidth,
+      width: drawerWidth,
       flexShrink: 0,
     },
   },

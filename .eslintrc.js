@@ -15,6 +15,9 @@ module.exports = {
 
   rules: {
     quotes: 0,
+    "implicit-arrow-linebreak": 0,
+    "operator-linebreak": 0,
+    "comma-dangle": 0,
     "arrow-body-style": 0,
     "react/react-in-jsx-scope": 0,
     "import/extensions": 0,
