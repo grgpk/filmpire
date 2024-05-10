@@ -2,7 +2,6 @@ import { useTheme } from "@mui/styles";
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-import useStyles from "./styles";
 import {
   Divider,
   List,
@@ -11,11 +10,10 @@ import {
   ListItemText,
   ListSubheader,
 } from "@mui/material";
+import useStyles from "./styles";
 
-const blueLogo =
-  "https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png";
-const redLogo =
-  "https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png";
+const blueLogo = "https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png";
+const redLogo = "https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png";
 
 const categories = [
   { label: "Popular", value: "popular" },
@@ -47,7 +45,7 @@ const Sidebar = ({ setMobileOpen }) => {
         <ListSubheader>Categories</ListSubheader>
         {categories.map(({ label, value }) => (
           <Link key={value} to="/" className={classes.links}>
-            <ListItem onClick={() => {}} button>
+            <ListItem onClick={() => setMobileOpen(false)} button>
               {/* <ListItemIcon>
                 <img
                   src={redLogo}
@@ -65,7 +63,7 @@ const Sidebar = ({ setMobileOpen }) => {
         <ListSubheader>Genres</ListSubheader>
         {demoCategories.map(({ label, value }) => (
           <Link key={value} to="/" className={classes.links}>
-            <ListItem onClick={() => {}} button>
+            <ListItem onClick={() => setMobileOpen(false)} button>
               {/* <ListItemIcon>
                 <img
                   src={redLogo}
