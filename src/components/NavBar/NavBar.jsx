@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   IconButton,
@@ -18,12 +18,14 @@ import {
 import { Link } from "react-router-dom";
 
 import useStyles from "./styles";
+import Sidebar from "../Sidebar/Sidebar";
 
 const NavBar = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
   const isAuthenticated = true;
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <AppBar>
@@ -33,7 +35,7 @@ const NavBar = () => {
             color="inherit"
             edge="start"
             style={{ outline: "none" }}
-            onClick={() => {}}
+            onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
             className={classes.menuButton}
           >
             <Menu />
@@ -67,6 +69,30 @@ const NavBar = () => {
         </div>
         {isMobile && "...search"}
       </Toolbar>
+      <div>
+        <nav>
+          {isMobile ? (
+            <Drawer
+              variant="temporary"
+              anchor="right"
+              open={mobileOpen}
+              classes={{ paper: classes.drawerPaper }}
+              ModalProps={{ keepMounted: true }}
+              onClose={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
+            >
+              <Sidebar setMobileOpen={setMobileOpen} />
+            </Drawer>
+          ) : (
+            <Drawer
+              classes={{ paper: classes.drawerPaper }}
+              variant="permanent"
+              open
+            >
+              <Sidebar setMobileOpen={setMobileOpen} />
+            </Drawer>
+          )}
+        </nav>
+      </div>
     </AppBar>
   );
 };
