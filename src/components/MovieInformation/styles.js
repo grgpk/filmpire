@@ -11,15 +11,22 @@ export default makeStyles((theme) => ({
     },
   },
 
+  posterContainer: {
+    [theme.breakpoints.down("lg")]: {
+      display: "flex",
+      marginBottom: "30px",
+    },
+  },
+
   poster: {
     borderRadius: "20px",
     boxShadow: "0.5em 1em 1em rgb(64,64,70)",
     width: "80%",
+    // height: "350px",
 
     [theme.breakpoints.down("md")]: {
       margin: "0 auto",
       width: "50%",
-      height: "350px",
     },
     [theme.breakpoints.down("sm")]: {
       margin: "0 auto",
