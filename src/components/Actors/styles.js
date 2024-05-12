@@ -7,4 +7,10 @@ export default makeStyles((theme) => ({
     objectFit: "cover",
     borderRadius: "20px",
   },
+
+  actorInfoContainer: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column !important",
+  },
 }));
