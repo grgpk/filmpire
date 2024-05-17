@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/styles";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import {
@@ -38,6 +38,10 @@ const Sidebar = ({ setMobileOpen }) => {
   const { genreIdOrCategoryName } = useSelector(
     (state) => state.currentGenreOrCategory
   );
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [genreIdOrCategoryName]);
 
   return (
     <>
