@@ -2,6 +2,7 @@ import { useTheme } from "@mui/styles";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
+import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
   CircularProgress,
@@ -15,7 +16,6 @@ import {
 import useStyles from "./styles";
 import { useGetGenresQuery } from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
-import { useDispatch, useSelector } from "react-redux";
 import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 
 const redLogo =
